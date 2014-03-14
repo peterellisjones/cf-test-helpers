@@ -6,7 +6,7 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/pivotal-cf-experimental/cf-test-helpers/cf"
+	"github.com/peterellisjones/cf-test-helpers/cf"
 	"github.com/vito/cmdtest"
 )
 
