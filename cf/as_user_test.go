@@ -26,12 +26,23 @@ var _ = Describe("AsUser", func() {
 		cf.Cf = FakeCf
 	})
 
+	Context("When SKIP_SSL_VALIDATION is true", func() {
+		It("calls cf api with --skip-ssl-validation", func() {
+			os.Setenv("SKIP_SSL_VALIDATION", "true")
+			cf.AsUser(user, FakeThingsToRunAsUser)
 
-	It("calls cf api", func() {
-		cf.AsUser(user, FakeThingsToRunAsUser)
-
-		Expect(FakeCfCalls[0]).To(Equal([]string{"api", "http://FAKE_API.example.com"}))
+			Expect(FakeCfCalls[0]).To(Equal([]string{"api", "http://FAKE_API.example.com", "--skip-ssl-validation"}))
+		})
 	})
+
+	Context("When SKIP_SSL_VALIDATION is not true", func() {
+		It("calls cf api without --skip-ssl-validation", func() {
+			cf.AsUser(user, FakeThingsToRunAsUser)
+
+			Expect(FakeCfCalls[0]).To(Equal([]string{"api", "http://FAKE_API.example.com"}))
+		})
+	})
+
 
 	It("calls cf auth", func() {
 		cf.AsUser(user, FakeThingsToRunAsUser)
