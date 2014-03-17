@@ -30,8 +30,8 @@ var _ = Describe("AsUser", func() {
 		It("calls cf api with --skip-ssl-validation", func() {
 			os.Setenv("SKIP_SSL_VALIDATION", "true")
 			cf.AsUser(user, FakeThingsToRunAsUser)
-
 			Expect(FakeCfCalls[0]).To(Equal([]string{"api", "http://FAKE_API.example.com", "--skip-ssl-validation"}))
+			os.Setenv("SKIP_SSL_VALIDATION", "false")
 		})
 	})
 
