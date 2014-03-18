@@ -43,7 +43,6 @@ var _ = Describe("AsUser", func() {
 		})
 	})
 
-
 	It("calls cf auth", func() {
 		cf.AsUser(user, FakeThingsToRunAsUser)
 
