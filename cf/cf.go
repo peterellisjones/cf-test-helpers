@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/onsi/ginkgo/config"
-	"github.com/pivotal-cf-experimental/cf-test-helpers/runner"
+	"github.com/peterellisjones/cf-test-helpers/runner"
 	"github.com/vito/cmdtest"
 )
 
