@@ -5,7 +5,7 @@ import (
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/pivotal-cf-experimental/cf-test-helpers/runner"
+	"github.com/peterellisjones/cf-test-helpers/runner"
 	"github.com/vito/cmdtest"
 	. "github.com/vito/cmdtest/matchers"
 )
