@@ -34,7 +34,7 @@ var _ = Describe("Curl", func() {
 			Expect(cmd.Path).To(Equal(exec.Command("curl").Path))
 
 			Expect(cmd.Args).To(Equal([]string{
-				"curl", "-s", "http://example.com",
+				"curl", "-sk", "http://example.com",
 			}))
 
 			return session, nil
