@@ -30,7 +30,7 @@ func Run(executable string, args ...string) *cmdtest.Session {
 }
 
 func Curl(args ...string) *cmdtest.Session {
-	args = append([]string{"-s"}, args...)
+	args = append([]string{"-sk"}, args...)
 	return Run("curl", args...)
 }
 
